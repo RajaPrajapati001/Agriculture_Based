@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: monospace;
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background-image: repeating-linear-gradient(68deg,rgb(22, 108, 14) 0%,rgb(144, 239, 136) 50%,rgb(212, 172, 98) 50%,rgb(210, 201, 185) 100%);
+                /* background-image: url("depositphotos_162298886-stock-photo-green-texture-background.jpg"); */
+                background-attachment:fixed;
+                background-size:cover;
+            }
+            .bbody {
+                width: 90%;
+                max-width: 850px;
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .back {
+                position: absolute;
+                top:1%;
+                left:1%;
+                /*                color:black;
+                                border:1px solid black;
+                border-radius:4px;
+                width:60px;
+                max-height:30px;
+                font-size:15px;
+                                font-weight:bold;*/
+                width: 90px;
+                height: 40px;
+border-radius: 20px;
+background-color: rgb(255, 255, 255);
+border: 1px solid white;
+font-weight:bold;
+backdrop-filter: blur(9px);
+            }
+            .back a {
+                text-decoration: none;
+                color: black;
+                font-weight: 800;
+                font-size:18px;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+            h4 {
+                margin-top:5px;
+                margin-bottom: 5px;
+                color:black;
+                font-weight:900;
+                font-size: 1.2rem;
+                ;
+            }
+            .inputs {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .inputs .aaa {
+                flex: 1 1 calc(33.333% - 20px);
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 10px;
+
+            }
+            .inputs .aaa label {
+                margin-bottom: 5px;
+                color:#064301;
+                font-weight:700;
+            }
+            .inputs .aaa input,
+            .inputs .aaa select {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 1em;
+                background-color: rgba(206, 211, 243, 0.42);
+            }
+            .bts {
+                display: flex;
+                justify-content: center;
+            }
+            .button {
+                background-color: #4772d7;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight:bold;
+            }
+            .button:hover {
+                background-color: #365bb3;
+            }
+            input,select{
+                width:70%;
+            }
+            @media (max-width: 768px) {
+                input,select{
+                    width:95%;
+                }
+                .inputs .aaa {
+                    flex: 1 1 100%;
+                }
+                .back{
+                    color:black;
+                    border:1px solid black;
+                    border-radius:4px;
+                    width:60px;
+                    max-height:30px;
+                    font-size:15px;
+                    font-weight:bold;
+                    top:1%;
+                    left:1%;
+                    background-color:white;
+                }
+                .mainhead{
+                    margin-top:5%;
+                }
+            }
+            .back:hover{
+                box-shadow: 1px 1px 6px 0px rgb(195, 255, 0);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bbody">
+            <form action="home.jsp"><button class="back">Back</button></form>
+            <form action="calculateLogic.jsp" method="post">
+                <h4 class="mainhead">Crop Details</h4>
+                <div class="inputs">
+                    <div class="aaa">
+                        <label for="crop">Crop Name*</label>
+                        <select id="crop" name="crop">
+                            <option value="Wheat">Wheat</option>
+                            <option value="Moong">Moong</option>
+                            <option value="Soybean">Soybean</option>
+                            <option value="Other">Other</option>
+                        </select>                </div>
+                    <div class="aaa">
+                        <label for="year">Crop Year*</label>
+                        <input id="year" name="year" type="text" minlength="4" maxlength="4" required>
+                    </div>
+                    <div class="aaa">
+                        <label for="acre">Crop Area(In Acre)*</label>
+                        <input id="acre" name="acre" type="number" min="1" max="100000" step="0.01" required>
+                    </div> </div>
+                <h4>Production Details</h4>
+                <div class="inputs">
+                    <div class="aaa">
+                        <label for="quality">Crop's Name(For Other)</label>
+                        <input id="quality" name="quality" type="text" pattern="[A-Za-z ]+" title="Only letters and spaces are allowed">
+                    </div>
+                    <div class="aaa">
+                        <label for="quantity">Production(In Kg)*</label>
+                        <input id="quantity" name="quantity" type="number" min="1" max="1000000" step="0.01" required>
+                    </div>
+                    <div class="aaa">
+                        <label for="rate">Selling Price(Per Kg)*</label>
+                        <input id="rate" name="rate" type="number" min="1" max="10000" step="0.01" required>
+                    </div>
+                </div>
+                <h4>Cost Details</h4>
+                <div class="inputs">
+                    <div class="aaa">
+                        <label for="seed">Seed Cost*</label>
+                        <input id="seed" name="seed" type="number" min="1" max="999999" step="0.01" required>
+                    </div>
+                    <div class="aaa">
+                        <label for="pes">Pesticide & Fertilizer*</label>
+                        <input id="pes" name="pes" type="number" min="0" max="100000" step="0.01" required>
+                    </div>
+                    <div class="aaa">
+                        <label for="labor">Labor Cost*</label>
+                        <input id="labor" name="labor" type="number" min="0" max="100000" step="0.01" required>
+                    </div>
+                    <div class="aaa">
+                        <label for="machine">Machine Cost*</label>
+                        <input id="machine" name="machine" type="number" min="0" max="100000" step="0.01" required>
+                    </div>
+                    <div class="aaa">
+                        <label for="electricity">Electricity Cost*</label>
+                        <input id="electricity" name="electricity" type="number" min="0" max="100000" step="0.01" required>
+                    </div>
+                    <div class="aaa">
+                        <label for="other">Other Cost*</label>
+                        <input id="other" name="other" type="number" min="0" max="100000" step="0.01" required>
+                    </div>
+                </div>
+                <div class="bts">
+                    <button class="button" type="submit">Calculate</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

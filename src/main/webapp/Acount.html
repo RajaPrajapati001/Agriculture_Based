@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="Account.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script>
+            function disableButton() {
+                document.getElementById("button").disabled = true; // Disable the button
+            }
+        </script>
+    </head>
+    <body>
+        <div class="box">
+            <div class="insidebox">
+                <div class="image"></div>
+                <div class="login">
+                    <div class="head">SignUp!</div><br><br><br>
+                    <form action="logic.jsp" method="post" onsubmit="disableButton()">
+                        <div class="form">
+                            <label for="newu"><i class="fa-solid fa-user-plus"></i>User-Name:</label><br><br>
+                            <input type="text" name="newu" id="newu" placeholder="Enter Your First Name" class="inp" required><br><br>
+                            <label for="emailid"><i class="fa-solid fa-square-envelope"></i>Email Id:</label><br><br>
+                            <input type="email" name="email" id="emailid" placeholder="Enter Gmail-id" class="inp" required><br><br>
+                            <label for="year"><i class="fa-solid fa-person"></i>Birth Year:</label><br><br>
+                            <input type="text" name="year" id="year" placeholder="Enter Birth Year" class="inp" required><br><br>
+                            <label for="newp"><i class="fa-solid fa-lock"></i>Create Password:</label><br><br>
+                            <input type="password" name="newp" id="newp" placeholder="Enter Password" class="inp" minlength="6" required><br><br>
+                            <input type="submit" value="Submit" id="button">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
